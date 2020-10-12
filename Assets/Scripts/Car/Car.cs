@@ -8,7 +8,9 @@ public class Car : MonoBehaviour
     public List<WheelCollider> steeringWheels;
     public List<WheelCollider> throttleWheels;
     public InputManager inputManager;
-    private float enginePower = 20000f;
+    [SerializeField]
+    private float enginePower = 10000f;
+    [SerializeField]
     private float maxSteering = 20f;
 
     // Start is called before the first frame update
@@ -22,7 +24,7 @@ public class Car : MonoBehaviour
     {
         foreach (var wheel in steeringWheels)
         {
-            wheel.steerAngle = inputManager.steering * maxSteering;
+            wheel.steerAngle = inputManager.steering * maxSteering ;
         }
 
         foreach (var wheel in throttleWheels)
